@@ -1,4 +1,5 @@
-#include <Arduino.h>
+#ifndef SAFETYPINS_H
+#define SAFETYPINS_H
 
 enum class AnalogSafetyPins {
   A0_SAFE = A0,
@@ -30,13 +31,12 @@ enum class DigitalSafetyPins {
 typedef AnalogSafetyPins AnalogSafetyPin;
 typedef DigitalSafetyPins DigitalSafetyPin;
 
-// TODO - find a better way to do this
-const AnalogSafetyPin A0_SAFE           = AnalogSafetyPins::A0_SAFE;
-const AnalogSafetyPin A1_SAFE           = AnalogSafetyPins::A1_SAFE;
-const AnalogSafetyPin A2_SAFE           = AnalogSafetyPins::A2_SAFE;
-const AnalogSafetyPin A3_SAFE           = AnalogSafetyPins::A3_SAFE;
-const AnalogSafetyPin A4_UNSAFE_TWI_SDA = AnalogSafetyPins::A4_UNSAFE_TWI_SDA;
-const AnalogSafetyPin A0_UNSAFE_TWI_SCL = AnalogSafetyPins::A0_UNSAFE_TWI_SCL;
+const AnalogSafetyPin A0_SAFE                   = AnalogSafetyPins::A0_SAFE;
+const AnalogSafetyPin A1_SAFE                   = AnalogSafetyPins::A1_SAFE;
+const AnalogSafetyPin A2_SAFE                   = AnalogSafetyPins::A2_SAFE;
+const AnalogSafetyPin A3_SAFE                   = AnalogSafetyPins::A3_SAFE;
+const AnalogSafetyPin A4_UNSAFE_TWI_SDA         = AnalogSafetyPins::A4_UNSAFE_TWI_SDA;
+const AnalogSafetyPin A0_UNSAFE_TWI_SCL         = AnalogSafetyPins::A0_UNSAFE_TWI_SCL;
 
 const DigitalSafetyPin D0_UNSAFE_SERIAL_RX      = DigitalSafetyPins::D0_UNSAFE_SERIAL_RX;
 const DigitalSafetyPin D1_UNSAFE_SERIAL_TX      = DigitalSafetyPins::D1_UNSAFE_SERIAL_TX;
@@ -53,14 +53,32 @@ const DigitalSafetyPin D11_UNSAFE_PWM_SPI_MOSI  = DigitalSafetyPins::D11_UNSAFE_
 const DigitalSafetyPin D12_UNSAFE_SPI_MISO      = DigitalSafetyPins::D12_UNSAFE_SPI_MISO;
 const DigitalSafetyPin D13_UNSAFE_SPI_SCK       = DigitalSafetyPins::D13_UNSAFE_SPI_SCK;
 
-// TODO - check sig.
-
-void safetyPinMode(AnalogSafetyPin pin, int pin_mode) {
+/*
+ * Analog
+ */
+ 
+void safetyPinMode(AnalogSafetyPin pin, uint8_t pin_mode) {
   int pin_num = static_cast<int>(pin);
   pinMode(pin_num, pin_mode);
 }
 
-void pinMode(AnalogSafetyPin pin, int pin_mode) {
+void pinMode(AnalogSafetyPin pin, uint8_t pin_mode) {
   int pin_num = static_cast<int>(pin);
   pinMode(pin_num, pin_mode);
 }
+
+/*
+ * Digital
+ */
+ 
+void safetyPinMode(DigitalSafetyPin pin, uint8_t pin_mode) {
+  int pin_num = static_cast<int>(pin);
+  pinMode(pin_num, pin_mode);
+}
+
+void pinMode(DigitalSafetyPin pin, uint8_t pin_mode) {
+  int pin_num = static_cast<int>(pin);
+  pinMode(pin_num, pin_mode);
+}
+
+#endif // SAFETYPINS_H
