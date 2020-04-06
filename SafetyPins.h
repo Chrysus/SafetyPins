@@ -62,11 +62,17 @@ const DigitalSafetyPin D13_UNSAFE_SPI_SCK       = DigitalSafetyPins::D13_UNSAFE_
 void safetyPinMode(AnalogSafetyPin pin, uint8_t pin_mode);
 void pinMode(AnalogSafetyPin pin, uint8_t pin_mode);
 
+float safetyPinAnalogRead(AnalogSafetyPin pin);
+float analogRead(AnalogSafetyPin pin);
+
 /*
  * Digital
  */
  
 void safetyPinMode(DigitalSafetyPin pin, uint8_t pin_mode);
 void pinMode(DigitalSafetyPin pin, uint8_t pin_mode);
+
+int safetyPinDigitalRead(DigitalSafetyPin pin);
+int digitalRead(DigitalSafetyPin pin);
 
 #endif // SAFETYPINS_H
