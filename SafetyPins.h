@@ -1,6 +1,8 @@
 #ifndef SAFETYPINS_H
 #define SAFETYPINS_H
 
+#include <Arduino.h>
+
 enum class AnalogSafetyPins {
   A0_SAFE = A0,
   A1_SAFE = A1,
@@ -57,28 +59,14 @@ const DigitalSafetyPin D13_UNSAFE_SPI_SCK       = DigitalSafetyPins::D13_UNSAFE_
  * Analog
  */
  
-void safetyPinMode(AnalogSafetyPin pin, uint8_t pin_mode) {
-  int pin_num = static_cast<int>(pin);
-  pinMode(pin_num, pin_mode);
-}
-
-void pinMode(AnalogSafetyPin pin, uint8_t pin_mode) {
-  int pin_num = static_cast<int>(pin);
-  pinMode(pin_num, pin_mode);
-}
+void safetyPinMode(AnalogSafetyPin pin, uint8_t pin_mode);
+void pinMode(AnalogSafetyPin pin, uint8_t pin_mode);
 
 /*
  * Digital
  */
  
-void safetyPinMode(DigitalSafetyPin pin, uint8_t pin_mode) {
-  int pin_num = static_cast<int>(pin);
-  pinMode(pin_num, pin_mode);
-}
-
-void pinMode(DigitalSafetyPin pin, uint8_t pin_mode) {
-  int pin_num = static_cast<int>(pin);
-  pinMode(pin_num, pin_mode);
-}
+void safetyPinMode(DigitalSafetyPin pin, uint8_t pin_mode);
+void pinMode(DigitalSafetyPin pin, uint8_t pin_mode);
 
 #endif // SAFETYPINS_H
