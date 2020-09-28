@@ -9,7 +9,7 @@ enum class AnalogSafetyPins {
   A2_SAFE = A2,
   A3_SAFE = A3,
   A4_UNSAFE_TWI_SDA = A4,
-  A0_UNSAFE_TWI_SCL = A5,
+  A5_UNSAFE_TWI_SCL = A5,
 };
 
 enum class DigitalSafetyPins {
@@ -38,7 +38,7 @@ const AnalogSafetyPin A1_SAFE                   = AnalogSafetyPins::A1_SAFE;
 const AnalogSafetyPin A2_SAFE                   = AnalogSafetyPins::A2_SAFE;
 const AnalogSafetyPin A3_SAFE                   = AnalogSafetyPins::A3_SAFE;
 const AnalogSafetyPin A4_UNSAFE_TWI_SDA         = AnalogSafetyPins::A4_UNSAFE_TWI_SDA;
-const AnalogSafetyPin A0_UNSAFE_TWI_SCL         = AnalogSafetyPins::A0_UNSAFE_TWI_SCL;
+const AnalogSafetyPin A5_UNSAFE_TWI_SCL         = AnalogSafetyPins::A5_UNSAFE_TWI_SCL;
 
 const DigitalSafetyPin D0_UNSAFE_SERIAL_RX      = DigitalSafetyPins::D0_UNSAFE_SERIAL_RX;
 const DigitalSafetyPin D1_UNSAFE_SERIAL_TX      = DigitalSafetyPins::D1_UNSAFE_SERIAL_TX;
